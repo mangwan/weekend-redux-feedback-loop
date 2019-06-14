@@ -10,18 +10,20 @@ import Support from '../Support/Support';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <Feeling />
-          <Understanding />
-          <Support />
-          <Comments />
-        <br/>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <header className="App-header">
+            <h1 className="App-title">Feedback!</h1>
+            <h4><i>Don't forget it!</i></h4>
+          </header>
+          <Route path="/feeling" component={Feeling} />
+          <Route path="/Understanding" component={Understanding} />
+          <Route path="/Support" component={Support} />
+          <Route path="/Comments" component={Comments} />
+          <br />
+        </div>
+      </Router>
     );
   }
 }
