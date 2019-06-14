@@ -1,7 +1,7 @@
 # Redux Feedback Loop
 
 
->Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
+[x] Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
 
 **PLEASE COMMENT YOUR CODE.**
 
@@ -11,7 +11,7 @@
 
 ### SETUP
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+[x] Create your database and tables using the provided `data.sql` file. Start the server.
 
 ```
 npm install
