@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter as Router} from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 
 class Feeling extends Component {
@@ -19,7 +18,7 @@ class Feeling extends Component {
                 <h2>How are you feeling today?</h2>
             </div>
             <div>
-                <h3>Feeling?</h3>
+                <h4>Feeling?</h4>
                 <select
                     value={this.props.reduxState.feedback.feeling}
                     onChange={this.handleChangeFor('feeling')}>
