@@ -12,6 +12,7 @@ import Comments from '../Comments/Comments';
 import Support from '../Support/Support';
 import Review from '../Review/Review';
 import Completed from '../Completed/Completed';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
   render() {
