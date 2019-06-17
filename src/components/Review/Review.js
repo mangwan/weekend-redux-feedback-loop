@@ -23,7 +23,7 @@ class Review extends Component {
         return (
             <>
                 <h2>Review Your Feedback</h2>
-                    <br/>
+                <br/>
                     Feelings: {this.props.reduxState.feedback.feeling}
                     <br />
                     Understanding: {this.props.reduxState.feedback.understanding}
