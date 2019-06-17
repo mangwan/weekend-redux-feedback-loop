@@ -30,11 +30,11 @@ class Comments extends Component {
                 </div>
                 <div>
                     <h4>Comments?</h4>
-                    <textarea
-                        rows="10" cols="75"
+                    <input
+                        type="text"
                         onChange={this.handleChange}
                         value={this.state.comments}>
-                    </textarea>
+                    </input>
                     <br/>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
