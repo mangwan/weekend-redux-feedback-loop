@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import { HashRouter as Router} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { HashRouter as Router } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class Review extends Component {
+
+    handleClickSubmit = () => {
+        console.log('in handleClickSubmit');
+    }
+
     handleChangeFor = (propertyName) => (event) => {
         this.props.dispatch({
             type: 'SET_FEEDBACK',
@@ -14,15 +19,21 @@ class Review extends Component {
     render() {
         return (
             <>
-            <h2>Review Your Feedback</h2>
-            Feelings: {this.props.reduxState.feedback.feeling}
-            <br/>
-            Understanding: {this.props.reduxState.feedback.understanding}
-            <br/>
-            Support: {this.props.reduxState.feedback.support}
-            <br/>
-            Comments: {this.props.reduxState.feedback.comments}
-            <br/>
+                <h2>Review Your Feedback</h2>
+                <ul>
+                    <li>Feelings: {this.props.reduxState.feedback.feeling}</li>
+                    <br />
+                    <li>Understanding: {this.props.reduxState.feedback.understanding}</li>
+                    <br />
+                    <li>Support: {this.props.reduxState.feedback.support}</li>
+                    <br />
+                    <li>Comments: {this.props.reduxState.feedback.comments}</li>
+                    <br />
+                </ul>
+            {/*need to include a ternary operator to check if form is complete*/}
+            <Router>
+                <Link to="/Completed"><button onClick="this.handleClickSubmit">Submit</button></Link>
+            </Router>
             </>
         );
     }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { HashRouter as Router} from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Review from '../Review/Review';
 
 class Understanding extends Component {
     handleChangeFor = (propertyName) => (event) => {
@@ -14,24 +15,27 @@ class Understanding extends Component {
     render() {
         return (
             <>
-            <div>
-                <h2>How well are you understanding the content?</h2>
-            </div>
-            <div>
-                <h4>Understanding?</h4>
-                <select
-                    value={this.props.reduxState.feedback.feeling}
-                    onChange={this.handleChangeFor('Understanding')}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <Router>
-                    <Link to="/Support"><button>Next</button></Link>
-                </Router>
-            </div>
+                <div>
+                    <h2>How well are you understanding the content?</h2>
+                </div>
+                <div>
+                    <h4>Understanding?</h4>
+                    <select
+                        value={this.props.reduxState.feedback.feeling}
+                        onChange={this.handleChangeFor('understanding')}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <Router>
+                        <Link to="/Support"><button>Next</button></Link>
+                    </Router>
+                </div>
+                <div>
+                    <Review />
+                </div>
             </>
         );
     }

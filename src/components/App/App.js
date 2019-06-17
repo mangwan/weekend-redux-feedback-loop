@@ -10,6 +10,8 @@ import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
 import Support from '../Support/Support';
+import Review from '../Review/Review';
+import Completed from '../Completed/Completed';
 
 class App extends Component {
   render() {
@@ -22,6 +24,8 @@ class App extends Component {
           <Route path="/Understanding" exact component={Understanding} />
           <Route path="/Support" exact component={Support} />
           <Route path="/Comments" exact component={Comments} />
+          <Route path="/Review" exact component={Review} />
+          <Route path="/Completed" exact component={Completed} />
           <br />
         </div>
       </Router>

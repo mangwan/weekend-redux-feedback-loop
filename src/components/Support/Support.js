@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { HashRouter as Router} from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import Review from '../Review/Review';
 
 class Support extends Component {
     handleChangeFor = (propertyName) => (event) => {
@@ -15,24 +15,27 @@ class Support extends Component {
     render() {
         return (
             <>
-            <div>
-                <h2>How well are you being supported?</h2>
-            </div>
-            <div>
-                <h4>Support?</h4>
-                <select
-                    value={this.props.reduxState.feedback.feeling}
-                    onChange={this.handleChangeFor('Support')}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <Router>
-                    <Link to="/Comments"><button>Next</button></Link>
-                </Router>
-            </div>
+                <div>
+                    <h2>How well are you being supported?</h2>
+                </div>
+                <div>
+                    <h4>Support?</h4>
+                    <select
+                        value={this.props.reduxState.feedback.feeling}
+                        onChange={this.handleChangeFor('support')}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <Router>
+                        <Link to="/Comments"><button>Next</button></Link>
+                    </Router>
+                </div>
+                <div>
+                    <Review />
+                </div>
             </>
         );
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Review from '../Review/Review';
 
 class Feeling extends Component {
     handleChangeFor = (propertyName) => (event) => {
@@ -21,7 +22,7 @@ class Feeling extends Component {
                     <h4>Feeling?</h4>
                     <select
                         value={this.props.reduxState.feedback.feeling}
-                        onChange={this.handleChangeFor('Feeling')}>
+                        onChange={this.handleChangeFor('feeling')}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -31,6 +32,9 @@ class Feeling extends Component {
                     <Router>
                         <Link to="/Understanding"><button>Next</button></Link>
                     </Router>
+                </div>
+                <div>
+                    <Review />
                 </div>
             </>
         );
