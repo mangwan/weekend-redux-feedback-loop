@@ -23,20 +23,19 @@ class Review extends Component {
         return (
             <>
                 <h2>Review Your Feedback</h2>
-                <ul>
-                    <li>Feelings: {this.props.reduxState.feedback.feeling}</li>
+                    <br/>
+                    Feelings: {this.props.reduxState.feedback.feeling}
                     <br />
-                    <li>Understanding: {this.props.reduxState.feedback.understanding}</li>
+                    Understanding: {this.props.reduxState.feedback.understanding}
                     <br />
-                    <li>Support: {this.props.reduxState.feedback.support}</li>
+                    Support: {this.props.reduxState.feedback.support}
                     <br />
-                    <li>Comments: {this.props.reduxState.feedback.comments}</li>
-                    <br />
-                </ul>
-            {/*need to include a ternary operator to check if form is complete*/}
-            <Router>
-                <Link to="/Completed"><button onClick={this.handleClickSubmit}>Submit</button></Link>
-            </Router>
+                    Comments: {this.props.reduxState.feedback.comments}
+                    <br/>
+                {/*need to include a ternary operator to check if form is complete*/}
+                <Router>
+                    <Link to="/Completed"><button onClick={this.handleClickSubmit}>Submit</button></Link>
+                </Router>
             </>
         );
     }
