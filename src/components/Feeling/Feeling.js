@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+// import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Review from '../Review/Review';
 
 class Feeling extends Component {
-    handleChangeFor = (propertyName) => (event) => {
-        this.props.dispatch({
-            type: 'SET_FEEDBACK',
-            payload: { [propertyName]: event.target.value },
+    state = {
+        feeling: '',
+    };
+
+    handleChange = (event) => {
+        this.setState({
+            feeling: event.target.value,
         })
+    }
+
+    handleClick = () => {
+        this.props.dispatch({
+            type: 'SET_FEEDBACK', 
+            payload: this.state
+        })
+        this.props.history.push('/Understanding');
     }
 
     render() {
@@ -20,18 +31,8 @@ class Feeling extends Component {
                 </div>
                 <div>
                     <h4>Feeling?</h4>
-                    <select
-                        value={this.props.reduxState.feedback.feeling}
-                        onChange={this.handleChangeFor('feeling')}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <Router>
-                        <Link to="/Understanding"><button>Next</button></Link>
-                    </Router>
+                    <input type="number" min="1" max="5" value={this.state.feeling} onChange={this.handleChange} />
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
                 <div>
                     <Review />

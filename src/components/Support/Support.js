@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Review from '../Review/Review';
 
 class Support extends Component {
-    handleChangeFor = (propertyName) => (event) => {
-        this.props.dispatch({
-            type: 'SET_FEEDBACK',
-            payload: { [propertyName]: event.target.value },
+    state = {
+        support: '',
+    };
+
+    handleChange = (event) => {
+        this.setState({
+            support: event.target.value,
         })
+    }
+
+    handleClick = () => {
+        this.props.dispatch({
+            type: 'SET_FEEDBACK', 
+            payload: this.state
+        })
+        this.props.history.push('/Comments');
     }
 
     render() {
@@ -20,18 +29,8 @@ class Support extends Component {
                 </div>
                 <div>
                     <h4>Support?</h4>
-                    <select
-                        value={this.props.reduxState.feedback.feeling}
-                        onChange={this.handleChangeFor('support')}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <Router>
-                        <Link to="/Comments"><button>Next</button></Link>
-                    </Router>
+                    <input type="number" min="1" max="5" value={this.state.support} onChange={this.handleChange} />
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
                 <div>
                     <Review />

@@ -11,6 +11,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+//retreive feedback info from database
 app.get('/feedback', (req, res) => {
     pool.query(`SELECT * FROM "feedback" ORDER BY "id" DESC;`)
     .then(
@@ -24,6 +25,7 @@ app.get('/feedback', (req, res) => {
     )
 })
 
+//post new feedback on database
 app.post('/submit', (req, res)=> {
     const feedback = req.body;
     pool.query(`
@@ -34,7 +36,7 @@ app.post('/submit', (req, res)=> {
         () => res.sendStatus(201)
     ).catch(
         error => {
-            console.log('error with post route', error);
+            console.log('error with POST', error);
         }
     )
 })

@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Review from '../Review/Review';
 
 
 class Comments extends Component {
-    handleChangeFor = (propertyName) => (event) => {
+    state = {
+        comments: '',
+    };
+
+    handleChange = (event) => {
+        this.setState({
+            comments: event.target.value,
+        })
+    }
+
+    handleClick = () => {
         this.props.dispatch({
             type: 'SET_FEEDBACK',
-            payload: { [propertyName]: event.target.value },
+            payload: this.state,
         })
+        this.props.history.push('/Review');
     }
 
     render() {
         return (
             <>
-
                 <div>
                     <h2>Any comments you want to leave?</h2>
                 </div>
@@ -24,12 +32,11 @@ class Comments extends Component {
                     <h4>Comments?</h4>
                     <textarea
                         rows="10" cols="75"
-                        onChange={this.handleChangeFor('comments')}
-                        value={this.props.reduxState.feedback.feeling}>
+                        onChange={this.handleChange}
+                        value={this.state.comments}>
                     </textarea>
-                    <Router>
-                        <Link to="/"><button>Next</button></Link>
-                    </Router>
+                    <br/>
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
                 <div>
                     <Review />
