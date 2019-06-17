@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import Review from '../Review/Review';
 
 class Feeling extends Component {
@@ -16,12 +14,16 @@ class Feeling extends Component {
     }
 
     handleClick = () => {
+        if (this.state.feeling === ""){
+            alert('Missing information!')
+        } else {
         this.props.dispatch({
             type: 'SET_FEEDBACK', 
             payload: this.state
         })
         this.props.history.push('/Understanding');
     }
+}
 
     render() {
         return (

@@ -14,6 +14,9 @@ class Support extends Component {
     }
 
     handleClick = () => {
+        if (this.state.support === ""){
+            alert('Missing information!')
+        } else {
         this.props.dispatch({
             type: 'SET_FEEDBACK', 
             payload: this.state

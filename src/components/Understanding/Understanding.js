@@ -14,6 +14,9 @@ class Understanding extends Component {
     }
 
     handleClick = () => {
+        if (this.state.understanding === ""){
+            alert('Missing information!')
+        } else {
         this.props.dispatch({
             type: 'SET_FEEDBACK', 
             payload: this.state

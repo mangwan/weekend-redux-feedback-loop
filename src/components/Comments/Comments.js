@@ -15,6 +15,9 @@ class Comments extends Component {
     }
 
     handleClick = () => {
+        if (this.state.comment === ""){
+            alert('Missing information!')
+        } else {
         this.props.dispatch({
             type: 'SET_FEEDBACK',
             payload: this.state,
