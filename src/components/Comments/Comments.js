@@ -30,11 +30,12 @@ class Comments extends Component {
                 </div>
                 <div>
                     <h4>Comments?</h4>
-                    <input
+                    <textarea
                         type="text"
+                        rows="10" cols="75"
                         onChange={this.handleChange}
-                        value={this.state.comments}>
-                    </input>
+                        value={this.props.feedback.feedback.comments}>
+                    </textarea>
                     <br/>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
@@ -47,7 +48,7 @@ class Comments extends Component {
 }
 
 const mapReduxStateToProps = (reduxState) => ({
-    reduxState,
+    feedback: reduxState,
 })
 
 export default connect(mapReduxStateToProps)(Comments);
