@@ -18,7 +18,7 @@ class Understanding extends Component {
                 <h2>How well are you understanding the content?</h2>
             </div>
             <div>
-                <h4>Understanding</h4>
+                <h4>Understanding?</h4>
                 <select
                     value={this.props.reduxState.feedback.feeling}
                     onChange={this.handleChangeFor('Understanding')}>

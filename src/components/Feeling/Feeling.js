@@ -21,7 +21,7 @@ class Feeling extends Component {
                 <h4>Feeling?</h4>
                 <select
                     value={this.props.reduxState.feedback.feeling}
-                    onChange={this.handleChangeFor('feeling')}>
+                    onChange={this.handleChangeFor('Feeling')}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
