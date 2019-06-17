@@ -23,6 +23,7 @@ class Understanding extends Component {
         })
         this.props.history.push('/Support');
     }
+}
 
     render() {
         return (

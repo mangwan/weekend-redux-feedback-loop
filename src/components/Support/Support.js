@@ -23,6 +23,7 @@ class Support extends Component {
         })
         this.props.history.push('/Comments');
     }
+}
 
     render() {
         return (
