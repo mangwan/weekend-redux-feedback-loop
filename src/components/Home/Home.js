@@ -6,6 +6,7 @@ class Home extends Component {
     render() {
         return (
             <>
+
             <h3>How was your day?</h3><Link to="/Feeling"><button>Start</button></Link>
        </>
         )
