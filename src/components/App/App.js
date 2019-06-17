@@ -26,6 +26,7 @@ class App extends Component {
           <Route path="/Comments" exact component={Comments} />
           <Route path="/Review" exact component={Review} />
           <Route path="/Completed" exact component={Completed} />
+          <Route path="/Admin" exact component={Admin} />
           <br />
         </div>
       </Router>
